@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body style="background-image: url(logo.jpg); background-size: cover;">
+   
+        <center><h1><mark>Welcome to Kunal Fitness</mark></h1></center>
+        
+        <div style="background-color: aqua;">
+            <hr>
+            
+                <a href="home.html">HOME</a>&nbsp;&nbsp;&nbsp;
+                <a href="service.html">GYM SERVICES</a>&nbsp;&nbsp;&nbsp;
+                <a href="features.html">GYM FEATURES</a>&nbsp;&nbsp;&nbsp;
+                <a href="AboutUs.html">ABOUT US</a>&nbsp;&nbsp;&nbsp;
+                <a href="login.html">LOGIN</a>&nbsp;&nbsp;&nbsp;
+                <a href="personal.html">PERSONAL INFORMATION</a>&nbsp;&nbsp;&nbsp;
+                <a href="contactus.html">CONTACT US</a>
+            
+            <hr>
+        </div>
+           
+    
+
+   <center>
+    <div >
+        <h1><mark>Login Page</mark</h1><br>
+    <a href="reg.html">Register</a>
+    <form id="loginform" >
+        <label>Enter UserName</label> &nbsp; &nbsp;
+        <input type="text" id="loginuname" placeholder="Enter Username" required>
+        <br><br>
+        <label>Enter Password</label> &nbsp; &nbsp; &nbsp;
+        <input type="password" id="loginpassword" placeholder="Enter Password" required>
+        <br><br>
+        <input type="submit" value="Login">
+        <input type="reset" value="Reset">
+    </form>
+</div>
+</center>
+
+
+    <script>
+        document.getElementById("loginform").addEventListener("submit", function (event) {
+            event.preventDefault();
+            var entereduname = document.getElementById("loginuname").value;
+            var enteredpassword = document.getElementById("loginpassword").value;
+
+            var storeduname = localStorage.getItem("uname");
+            var storedpassword = localStorage.getItem("password");
+
+            if (entereduname === storeduname && enteredpassword === storedpassword) {
+                alert("Login Successfully")
+                window.location.href = "personal.html"
+            }
+            else {
+                alert("Please register")
+            }
+        })
+    </script>
+</body>
+
+</html>

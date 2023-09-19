@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Gym Resistance Form</title>
+</head>
+<body style="background-color: aqua;">
+    <center><h1><mark>Welcome to Kunal Fitness</mark></h1></center>
+
+    <div style="background-color: darksalmon;">
+        
+            <hr>
+                <a href="home.html">HOME</a>&nbsp;&nbsp;&nbsp;
+                <a href="service.html">GYM SERVICES</a>&nbsp;&nbsp;&nbsp;
+                <a href="features.html">GYM FEATURES</a>&nbsp;&nbsp;&nbsp;
+                <a href="AboutUs.html">ABOUT US</a>&nbsp;&nbsp;&nbsp;
+                <a href="login.html">LOGIN</a>&nbsp;&nbsp;&nbsp;
+                <a href="personal.html">PERSONAL INFORMATION</a>&nbsp;&nbsp;&nbsp;
+                <a href="contactus.html">CONTACT US</a>
+            <hr>
+        </div>
+    <main>
+        <div class="container">
+           <center><h2><mark>Sign up for a gym membership below:</mark></h2></center> 
+            <form id="membershipForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                
+                <label for="membershipType">Membership Type:</label>
+                 <select id="membershipType">
+                 <option value="basic">Basic</option>
+                  <option value="premium">Premium</option>
+    </select>
+              
+                
+                
+                <button type="submit">Sign up</button>
+            </form>
+        </div>
+    </main>
+    <div id="membershipConfirmation" style="display: none;">
+        <h2>Thank you for signing up!</h2>
+        <p>Your membership details:</p>
+        <p><span id="confirmationName"></span></p>
+        <p><span id="confirmationEmail"></span></p>
+        <p><span id="confirmationMembershipType"></span></p>
+      </div>
+    <footer>
+        <p>&copy; 2023 kunal fitness</p>
+    </footer>
+    <script>
+        document.getElementById('membershipForm').addEventListener('submit', function(event) {
+          event.preventDefault();  // Prevents the default form submission behavior
+    
+          // Get form values
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const membershipType = document.getElementById('membershipType').value;
+    
+          // Display confirmation
+          document.getElementById('confirmationName').textContent = 'Name: ' + name;
+          document.getElementById('confirmationEmail').textContent = 'Email: ' + email;
+          document.getElementById('confirmationMembershipType').textContent = 'Membership Type: ' + membershipType;
+    
+          document.getElementById('membershipForm').style.display = 'none';
+          document.getElementById('membershipConfirmation').style.display = 'block';
+        });
+      </script>
+</body>
+</html>
